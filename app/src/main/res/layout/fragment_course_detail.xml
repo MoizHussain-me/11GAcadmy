@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="variable"
+            type="com.example.a11gacadmey.models.CourseModel" />
+
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.CourseDetailFragment">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <TextView
+                android:padding="5dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:text="@{variable.name}" />
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textAlignment="center"
+                        android:padding="5dp"
+                        android:textSize="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@{`views : ` + String.valueOf(variable.views)}" />
+
+                    <RatingBar
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:id="@+id/listitemrating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:isIndicator="true"
+                        android:rating="@{variable.rating}"
+                        android:max="5" />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:padding="5dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{`By : `+ variable.trainer}" />
+
+<!--            <RatingBar-->
+<!--                android:progressTint="#E69522"-->
+<!--                android:rating="@{ConString.valueOf(variable.rating)}"-->
+<!--                android:id="@+id/ratingBar"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content" />-->
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/description"
+                    android:maxLines="5"
+                    android:text="@{variable.description}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+                <TextView
+                    android:id="@+id/age"
+                    android:text="@{`Age : `+variable.age}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:text="@{`Duration : `+variable.duration}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/language"
+                    android:text="@{`Language : `+variable.language}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+                <!--                <ImageButton-->
+<!--                    android:id="@+id/toggle"-->
+<!--                    android:onClick="toggle"-->
+<!--                    android:background="@null"-->
+<!--                    android:layout_weight="0.5"-->
+<!--                    android:src="@drawable/ic_baseline_arrow_drop_down_24"-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_gravity="right|top"-->
+<!--                    android:layout_height="wrap_content" />-->
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</layout>
